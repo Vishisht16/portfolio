@@ -132,7 +132,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.6 }}
           style={{ pointerEvents: "none"}}
         >
-          <FuturisticButton href="#about" variant="primary" style={{ pointerEvents: "auto" }}>
+          <FuturisticButton href="#about" variant="primary">
             Explore My Universe
           </FuturisticButton>
           <FuturisticButton
@@ -140,7 +140,6 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             variant="accent"
-            style={{ pointerEvents: "auto" }}
           >
             Check My Resume
           </FuturisticButton>
