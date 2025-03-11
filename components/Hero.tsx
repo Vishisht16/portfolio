@@ -100,6 +100,7 @@ export default function Hero() {
         style={{
           transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px)`,
           transition: "transform 0.1s ease-out",
+          pointerEvents: "auto"
         }}
       >
         <div className="mb-6 relative">
@@ -129,6 +130,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
+          style={{ pointerEvents: "auto"}}
         >
           <FuturisticButton href="#about" variant="primary">
             Explore My Universe
