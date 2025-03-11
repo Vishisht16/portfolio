@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 255, 255, 255;
+  --background-start: 13, 17, 23;
+  --background-end: 26, 32, 44;
+  --primary-glow: 66, 153, 225;
+  --secondary-glow: 127, 90, 240;
+  --accent-glow: 247, 37, 133;
+  --grid-color: 66, 153, 225;
+  --text-primary: 255, 255, 255;
+  --text-secondary: 148, 163, 184;
+  --border-primary: 66, 153, 225;
+}
+
+.dark {
+  --foreground: 255, 255, 255;
+  --background-start: 13, 17, 23;
+  --background-end: 26, 32, 44;
+  --primary-glow: 66, 153, 225;
+  --secondary-glow: 127, 90, 240;
+  --accent-glow: 247, 37, 133;
+  --grid-color: 66, 153, 225;
+  --text-primary: 255, 255, 255;
+  --text-secondary: 148, 163, 184;
+  --border-primary: 66, 153, 225;
+}
+
+.light {
+  --foreground: 15, 23, 42;
+  --background-start: 241, 245, 249;
+  --background-end: 226, 232, 240;
+  --primary-glow: 37, 99, 235;
+  --secondary-glow: 79, 70, 229;
+  --accent-glow: 219, 39, 119;
+  --grid-color: 37, 99, 235;
+  --text-primary: 30, 41, 59; /* Darker text for better contrast */
+  --text-secondary: 51, 65, 85; /* Darker secondary text */
+  --border-primary: 37, 99, 235;
+}
+
+body {
+  color: rgb(var(--text-primary));
+  background: rgb(var(--background-start));
+  overflow-x: hidden;
+  position: relative;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Enhanced Futuristic background with CSS only */
+.futuristic-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgb(var(--background-start)), rgb(var(--background-end)));
+  overflow: hidden;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Stars layer */
+.futuristic-background::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background-image: radial-gradient(3px 3px at 40px 60px, rgba(var(--primary-glow), 0.8), rgba(0, 0, 0, 0)),
+    radial-gradient(3px 3px at 20px 50px, rgba(var(--secondary-glow), 0.8), rgba(0, 0, 0, 0)),
+    radial-gradient(3px 3px at 30px 100px, rgba(var(--accent-glow), 0.8), rgba(0, 0, 0, 0)),
+    radial-gradient(3px 3px at 40px 60px, rgba(var(--primary-glow), 0.8), rgba(0, 0, 0, 0)),
+    radial-gradient(3px 3px at 110px 90px, rgba(var(--secondary-glow), 0.8), rgba(0, 0, 0, 0)),
+    radial-gradient(3px 3px at 190px 150px, rgba(var(--accent-glow), 0.8), rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.5;
+  animation: stars-move 80s linear infinite;
+  transform: rotate(45deg);
+}
+
+/* Glow layer */
+.futuristic-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 20% 20%, rgba(var(--primary-glow), 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 80%, rgba(var(--secondary-glow), 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse at 50% 50%, rgba(var(--accent-glow), 0.1) 0%, transparent 70%);
+  animation: glow-pulse 15s ease-in-out infinite alternate;
+}
+
+/* Remove the futuristic-grid class and related styles */
+.futuristic-grid {
+  display: none;
+}
+
+/* Floating particles */
+.floating-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(var(--primary-glow), 0.7);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float-up 15s linear infinite;
+}
+
+.particle:nth-child(2n) {
+  background: rgba(var(--secondary-glow), 0.7);
+  animation-duration: 25s;
+}
+
+.particle:nth-child(3n) {
+  background: rgba(var(--accent-glow), 0.7);
+  animation-duration: 20s;
+}
+
+.particle:nth-child(4n) {
+  width: 3px;
+  height: 3px;
+  animation-duration: 30s;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(calc(sin(var(--random-offset, 0deg)) * 100px));
+    opacity: 0;
+  }
+}
+
+@keyframes stars-move {
+  0% {
+    transform: rotate(45deg) translateY(0);
+  }
+  100% {
+    transform: rotate(45deg) translateY(1000px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes grid-pulse {
+  0% {
+    opacity: 0.5;
+    background-size: 40px 40px;
+  }
+  50% {
+    opacity: 0.7;
+    background-size: 42px 42px;
+  }
+  100% {
+    opacity: 0.5;
+    background-size: 40px 40px;
+  }
+}
+
+/* Futuristic UI elements */
+.futuristic-box {
+  background: rgba(var(--background-start), 0.7);
+  border: 1px solid rgba(var(--border-primary), 0.3);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(var(--primary-glow), 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform: translateZ(0); /* Hardware acceleration */
+  will-change: transform, opacity; /* Hint for browser optimization */
+}
+
+.futuristic-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(var(--primary-glow), 0.8), transparent);
+  animation: border-flow 4s linear infinite;
+  will-change: transform; /* Optimize animation */
+}
+
+@keyframes border-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Glowing text */
+.text-glow {
+  text-shadow: 0 0 10px rgba(var(--primary-glow), 0.5), 0 0 20px rgba(var(--primary-glow), 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, rgb(var(--primary-glow)), rgb(var(--secondary-glow)));
+}
+
+/* Light mode specific adjustments for better contrast */
+.light .text-gray-300 {
+  color: rgb(51, 65, 85); /* Darker gray for better contrast in light mode */
+}
+
+.light .text-blue-300,
+.light .text-blue-400 {
+  color: rgb(30, 64, 175); /* Darker blue for better contrast in light mode */
+}
+
+.light .gradient-text {
+  background-image: linear-gradient(to right, rgb(30, 64, 175), rgb(79, 70, 229));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(var(--background-start), 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--primary-glow), 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--primary-glow), 0.5);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Radial gradient for vignette effect */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, transparent 0%, rgba(var(--background-start), 0.8) 100%);
+}
+
