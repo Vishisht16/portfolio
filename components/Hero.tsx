@@ -23,7 +23,7 @@ export default function Hero() {
     if (isDeleting) {
       setTypingSpeed(60) // Faster when deleting
     } else {
-      setTypingSpeed(100) // Normal speed when typing
+      setTypingSpeed(80) // Normal speed when typing
     }
 
     // Handle deleting text
@@ -40,7 +40,7 @@ export default function Hero() {
     else {
       if (displayText.length === currentTitle.length) {
         // Pause at the end of typing before deleting
-        setTypingSpeed(1200) // Pause for 2 seconds
+        setTypingSpeed(1000) // Pause for 2 seconds
         setIsDeleting(true)
       } else {
         setDisplayText(currentTitle.substring(0, displayText.length + 1))
@@ -134,7 +134,7 @@ export default function Hero() {
             Explore My Universe
           </FuturisticButton>
           <FuturisticButton
-            href="https://vishisht.tiiny.site/"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             variant="accent"

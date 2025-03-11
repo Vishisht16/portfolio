@@ -65,6 +65,7 @@ export default function Skills({ id }: { id?: string }) {
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 15px rgba(66, 153, 225, 0.5)",
+                transition: { duration: 0.2}
               }}
               className="futuristic-box px-5 py-3 dark:text-blue-400 light:text-blue-700 text-sm font-semibold transition-all duration-300"
               style={{
