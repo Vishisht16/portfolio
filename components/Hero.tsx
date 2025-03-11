@@ -100,7 +100,7 @@ export default function Hero() {
         style={{
           transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px)`,
           transition: "transform 0.1s ease-out",
-          pointerEvents: "auto"
+          pointerEvents: "none"
         }}
       >
         <div className="mb-6 relative">
@@ -130,9 +130,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          style={{ pointerEvents: "auto"}}
+          style={{ pointerEvents: "none"}}
         >
-          <FuturisticButton href="#about" variant="primary">
+          <FuturisticButton href="#about" variant="primary" style={{ pointerEvents: "auto" }}>
             Explore My Universe
           </FuturisticButton>
           <FuturisticButton
@@ -140,6 +140,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             variant="accent"
+            style={{ pointerEvents: "auto" }}
           >
             Check My Resume
           </FuturisticButton>
