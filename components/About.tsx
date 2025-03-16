@@ -35,7 +35,7 @@ export default function About({ id }: { id?: string }) {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-75 blur-sm animate-pulse"></div>
               <div className="relative">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-06%20at%2014.18.53_f279048f%20%281%29.jpg-25VseHPoNTL1wl9IKrua8302K0cVGF.jpeg"
+                  src="/profile.png"
                   alt="Vishisht Mishra"
                   width={300}
                   height={300}
