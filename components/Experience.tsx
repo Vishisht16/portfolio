@@ -8,7 +8,7 @@ export default function Experience({ id }: { id?: string }) {
   const experiences = [
     {
       title: "Artificial Intelligence Intern",
-      company: "Coding Jr",
+      company: "Planto AI",
       date: "02/2025 to Current",
       description: [
         "Working on building a personalized copilot for developers at company's clients",
