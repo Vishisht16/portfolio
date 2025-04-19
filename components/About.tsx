@@ -64,7 +64,7 @@ export default function About({ id }: { id?: string }) {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <FuturisticButton href="mailto:vishishtmishra150@gmail.com" variant="primary" className="min-w-[140px]">
+              <FuturisticButton href="mailto:mishra@vishisht.tech" variant="primary" className="min-w-[140px]">
                 <Mail className="mr-2 h-5 w-5" /> Email Me
               </FuturisticButton>
               <FuturisticButton
