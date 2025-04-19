@@ -1,8 +1,11 @@
+
 "use client"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 import FuturisticHeading from "./ui/FuturisticHeading"
 import FuturisticBox from "./ui/FuturisticBox"
+import { Eye } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function Certifications({ id }: { id?: string }) {
   const certifications = [
@@ -10,15 +13,17 @@ export default function Certifications({ id }: { id?: string }) {
       title: "GitHub Foundations",
       issuer: "GitHub",
       date: "04/2025",
-      url: "https://www.credly.com/badges/dc11d600-577d-400a-a6c4-28249563309d/", // Add a URL if applicable
+      skills: ["Git", "GitHub"],
+      credentialLink: "https://www.credly.com/badges/dc11d600-577d-400a-a6c4-28249563309d"
     },
     {
       title: "Oracle Cloud Infrastructure Certified AI Foundations Associate",
       issuer: "Oracle",
       date: "02/2025",
-      url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=AA0108D5D1C2320D833CBEAFD63672B00D17C6C4FC6E817F08E4BBB78B4A8181", // Add a URL if applicable
+      skills: ["Artificial Intelligence", "Oracle Cloud"],
+      credentialLink: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=AA0108D5D1C2320D833CBEAFD63672B00D17C6C4FC6E817F08E4BBB78B4A8181"
     },
-  ];
+  ]
 
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
@@ -48,7 +53,7 @@ export default function Certifications({ id }: { id?: string }) {
           Certifications
         </FuturisticHeading>
 
-        <div className="space-y-8">
+        <div className="space-y-12">
           {certifications.map((cert, index) => (
             <FuturisticBox
               key={index}
@@ -56,19 +61,41 @@ export default function Certifications({ id }: { id?: string }) {
               className="transform-gpu"
             >
               <div className="relative">
-                <h3 className="text-xl font-bold dark:text-white light:text-gray-900 mb-2">{cert.title}</h3>
-                <h4 className="text-lg dark:text-blue-400 light:text-blue-700 mb-1">{cert.issuer}</h4>
-                <p className="text-sm dark:text-gray-300 light:text-gray-700">{cert.date}</p>
-                {cert.url && (
-                  <a href={cert.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block px-3 py-1 text-sm bg-blue-900/20 dark:border-blue-500/20 light:border-blue-700/20 light:bg-blue-100/30 rounded-md dark:text-blue-300 light:text-blue-700 border border-blue-500/30">
-                    Verify Credential
-                  </a>
-                )}
+                <div className="flex items-center gap-4 mb-2">
+                  <h3 className="text-2xl font-bold dark:text-white light:text-gray-900">{cert.title}</h3>
+                  <div className="inline-block px-3 py-1 text-sm bg-blue-900/30 dark:border-blue-500/30 light:border-blue-700/30 light:bg-blue-100/50 rounded-full dark:text-blue-300 light:text-blue-800">
+                    {cert.date}
+                  </div>
+                </div>
+                <h4 className="text-xl dark:text-blue-400 light:text-blue-700 mb-2">{cert.issuer}</h4>
+                <p className="text-sm dark:text-gray-400 light:text-gray-600 mb-4">
+                  Credential ID: {cert.credentialId}
+                </p>
+                <p className="dark:text-gray-300 light:text-gray-700 mb-4">{cert.description}</p>
+                <div className="flex items-center justify-between">
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {cert.skills.map((skill, i) => (
+                      <div
+                        key={i}
+                        className="px-3 py-1 text-sm bg-blue-900/20 dark:border-blue-500/20 light:border-blue-700/20 light:bg-blue-100/30 rounded-full dark:text-blue-300 light:text-blue-700 border border-blue-500/30"
+                      >
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
+                  <Button 
+                    variant="outline" 
+                    className="hover:scale-110 transition-transform duration-300 ease-in-out"
+                    onClick={() => window.open(cert.credentialLink, '_blank')}
+                  >
+                    <Eye className="mr-2 h-4 w-4" /> Verify Credential
+                  </Button>
+                </div>
               </div>
             </FuturisticBox>
           ))}
         </div>
       </motion.div>
     </section>
-  );
+  )
 }
