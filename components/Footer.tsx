@@ -29,7 +29,7 @@ export default function Footer() {
             className="mt-4 flex justify-center space-x-6"
           >
             <a
-              href="mailto:vishishtmishra150@gmail.com"
+              href="mailto:mishra@vishisht.tech"
               className="dark:text-blue-400 light:text-blue-700 hover:text-blue-300 dark:hover:text-blue-300 light:hover:text-blue-500 transition-colors duration-300 relative group"
             >
               Email
