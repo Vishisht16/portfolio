@@ -1,4 +1,3 @@
-
 "use client"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
@@ -7,8 +6,16 @@ import FuturisticBox from "./ui/FuturisticBox"
 import { Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+type Certification = {
+  title: string
+  issuer: string
+  date: string
+  skills: string[]
+  credentialLink: string
+}
+
 export default function Certifications({ id }: { id?: string }) {
-  const certifications = [
+  const certifications: Certification[] = [
     {
       title: "GitHub Foundations",
       issuer: "GitHub",
@@ -67,11 +74,7 @@ export default function Certifications({ id }: { id?: string }) {
                     {cert.date}
                   </div>
                 </div>
-                <h4 className="text-xl dark:text-blue-400 light:text-blue-700 mb-2">{cert.issuer}</h4>
-                <p className="text-sm dark:text-gray-400 light:text-gray-600 mb-4">
-                  Credential ID: {cert.credentialId}
-                </p>
-                <p className="dark:text-gray-300 light:text-gray-700 mb-4">{cert.description}</p>
+                <h4 className="text-xl dark:text-blue-400 light:text-blue-700 mb-4">{cert.issuer}</h4>
                 <div className="flex items-center justify-between">
                   <div className="mt-4 flex flex-wrap gap-2">
                     {cert.skills.map((skill, i) => (
