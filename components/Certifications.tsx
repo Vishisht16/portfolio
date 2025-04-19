@@ -12,6 +12,12 @@ export default function Certifications({ id }: { id?: string }) {
       date: "04/2025",
       url: "https://www.credly.com/badges/dc11d600-577d-400a-a6c4-28249563309d/", // Add a URL if applicable
     },
+    {
+      title: "Oracle Cloud Infrastructure Certified AI Foundations Associate",
+      issuer: "Oracle",
+      date: "02/2025",
+      url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=AA0108D5D1C2320D833CBEAFD63672B00D17C6C4FC6E817F08E4BBB78B4A8181", // Add a URL if applicable
+    },
   ];
 
   const sectionRef = useRef<HTMLElement>(null)
@@ -55,7 +61,7 @@ export default function Certifications({ id }: { id?: string }) {
                 <p className="text-sm dark:text-gray-300 light:text-gray-700">{cert.date}</p>
                 {cert.url && (
                   <a href={cert.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block px-3 py-1 text-sm bg-blue-900/20 dark:border-blue-500/20 light:border-blue-700/20 light:bg-blue-100/30 rounded-md dark:text-blue-300 light:text-blue-700 border border-blue-500/30">
-                    View Credential
+                    Verify Credential
                   </a>
                 )}
               </div>
