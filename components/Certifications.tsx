@@ -7,18 +7,11 @@ import FuturisticBox from "./ui/FuturisticBox"
 export default function Certifications({ id }: { id?: string }) {
   const certifications = [
     {
-      title: "Certification Title 1",
-      issuer: "Issuer Name 1",
-      date: "MM/YYYY",
-      url: "Certification URL (Optional)", // Add a URL if applicable
+      title: "GitHub Foundations",
+      issuer: "GitHub",
+      date: "04/2025",
+      url: "https://www.credly.com/badges/dc11d600-577d-400a-a6c4-28249563309d/", // Add a URL if applicable
     },
-    {
-      title: "Certification Title 2",
-      issuer: "Issuer Name 2",
-      date: "MM/YYYY",
-      url: "Certification URL (Optional)", // Add a URL if applicable
-    },
-    // Add more certifications as needed
   ];
 
   const sectionRef = useRef<HTMLElement>(null)
