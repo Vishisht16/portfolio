@@ -46,7 +46,7 @@ export default function Education({ id }: { id?: string }) {
             <h4 className="text-xl dark:text-blue-400 light:text-blue-700 mb-4">Central University of Haryana</h4>
             <div className="mt-4 inline-block px-4 py-2 bg-blue-900/20 dark:border-blue-500/20 light:border-blue-700/20 light:bg-blue-100/30 rounded-md">
               <span className="text-lg dark:text-gray-300 light:text-gray-700">CGPA: </span>
-              <span className="text-lg font-semibold dark:text-blue-300 light:text-blue-700">7.65/10</span>
+              <span className="text-lg font-semibold dark:text-blue-300 light:text-blue-700">7.71/10</span>
             </div>
           </div>
         </FuturisticBox>
