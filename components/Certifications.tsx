@@ -17,6 +17,13 @@ type Certification = {
 export default function Certifications({ id }: { id?: string }) {
   const certifications: Certification[] = [
     {
+      title: "Oracle AI Vector Search Certified Professional",
+      issuer: "Oracle",
+      date: "05/2025",
+      skills: ["Oracle Database23ai", "PL/SQL", "Vector Search", "Natural Language Processing(NLP)"],
+      credentialLink: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=644EB7E5C680FBCDC57FC98FB1737E887B1C4A35A18306766EC203330814BB6E"
+    },
+    {
       title: "GitHub Foundations",
       issuer: "GitHub",
       date: "04/2025",
