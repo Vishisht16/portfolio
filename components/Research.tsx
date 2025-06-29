@@ -15,14 +15,6 @@ export default function Research({ id }: { id?: string }) {
       ],
       technologies: ["Data Collection", "Data Preprocessing", "Algorithms", "Natural Language Processing", "Linguistics"],
     },
-    {
-      title: "Activity Recognition in Classroom",
-      description: [
-        "As a personal project, I'm developing and training a multimodal deep learning model for activity recognition in a classroom environment using a large and diverse dataset.",
-        "Main focus of the project is to use Computer Vision and Deep Learning algorithms to automatically detect and categorize classroom activities of students and teachers to automate monitoring and improve classroom management.",
-      ],
-      technologies: ["Computer Vision", "Deep Learning", "Distributed Computing", "Google Cloud Platform (GCP)"],
-    },
   ]
 
   const sectionRef = useRef<HTMLElement>(null)

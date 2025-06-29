@@ -7,21 +7,33 @@ import FuturisticBox from "./ui/FuturisticBox"
 export default function Experience({ id }: { id?: string }) {
   const experiences = [
     {
+      title: "Azure Cloud Engineer",
+      company: "Luxury In Taste",
+      date: "05/2025 to 06/2025",
+      description: [
+        "Managed complete Azure-based infrastructure for the company website, leveraging services like Azure Active Directory, Cosmos DB, and Communication Services to ensure secure, scalable, and efficient operations.",
+        "Built and maintained CI/CD pipelines using GitHub Actions for a high-traffic e-commerce website, enabling seamless, automated deployment and minimizing downtime during frequent updates.",
+        "Developed an end-to-end AI solution using Azure AI Vision and Azure OpenAI Services, adding an intelligent image analysis based website functionality."
+      ],
+      skills: ["Microsoft Azure", "GitHub Actions", "Computer Vision", "Azure OpenAI Services", "CI/CD"],
+    },
+    {
       title: "Artificial Intelligence Intern",
       company: "Planto AI",
-      date: "02/2025 to Current",
+      date: "02/2025 to 04/2025",
       description: [
-        "Working on building a personalized copilot for developers at company's clients",
-        "Integrating UI designing, software development and AI to create a production level LLM.",
+        "Worked on building a personalized copilot for developers at client companies.",
+        "Integrated UI design, software development and AI to create a production level LLM integrated with developer environments.",
       ],
       skills: ["UI/UX", "Flask", "AWS", "Kubernetes", "Transformers", "LLM Fine Tuning"],
     },
     {
       title: "AI Trainer (Freelancer)",
       company: "Outlier",
-      date: "09/2024 to 11/2024",
+      date: "09/2024 to 01/2025",
       description: [
-        "Used prompt engineering to significantly improve LLM performances on math, science and language based tasks.",
+        "Worked under a subsidiary of Scale AI, using prompt engineering techniques to significantly improve performance on various LLMs.",
+        "The projects were RLHF-based, focusing on math, science, linguistic and programming tasks."
       ],
       skills: ["Prompt Engineering"],
     },
@@ -30,8 +42,8 @@ export default function Experience({ id }: { id?: string }) {
       company: "GirlScript",
       date: "09/2024 to 11/2024",
       description: [
-        "Worked on ML-based open-source projects.",
-        "Contributed to public repositories in a competitive environment.",
+        "Worked on ML-based open-source projects, contributing to public repositories in a competitive environment.",
+        "Created deep learning models for autocorrect, speech emotion recognition, text-to-music generator app and more.",
       ],
       skills: ["PyTorch", "TensorFlow", "OpenCV", "Speech Recognition"],
     },
