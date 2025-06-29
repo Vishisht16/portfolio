@@ -40,7 +40,7 @@ export default function Education({ id }: { id?: string }) {
                 B.Tech.: Computer Science & Engineering
               </h3>
               <div className="inline-block px-3 py-1 text-sm bg-blue-900/30 dark:border-blue-500/30 light:border-blue-700/30 light:bg-blue-100/50 rounded-full dark:text-blue-300 light:text-blue-800">
-                09/2023 to 07/2027 (Expected)
+                08/2023 to 07/2027 (Expected)
               </div>
             </div>
             <h4 className="text-xl dark:text-blue-400 light:text-blue-700 mb-4">Central University of Haryana</h4>
