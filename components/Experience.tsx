@@ -7,13 +7,23 @@ import FuturisticBox from "./ui/FuturisticBox"
 export default function Experience({ id }: { id?: string }) {
   const experiences = [
     {
+      title: "Full Stack Developer",
+      company: "Fuzzy Nodes",
+      date: "05/2025 to Present",
+      description: [
+        "Contributed to the organization's software landscape in both their main website's frontend and backend systems.",
+        "Developing a full-stack Enterprise Resource Planning software from scratch using Next.js."
+      ],
+      skills: ["Next.js", "MongoDB", "API Development", "UI/UX Design"],
+    },
+    {
       title: "Azure Cloud Engineer",
       company: "Luxury In Taste",
-      date: "05/2025 to 06/2025",
+      date: "05/2025 to Present",
       description: [
         "Managed complete Azure-based infrastructure for the company website, leveraging services like Azure Active Directory, Cosmos DB, and Communication Services to ensure secure, scalable, and efficient operations.",
         "Built and maintained CI/CD pipelines using GitHub Actions for a high-traffic e-commerce website, enabling seamless, automated deployment and minimizing downtime during frequent updates.",
-        "Developed an end-to-end AI solution using Azure AI Vision and Azure OpenAI Services, adding an intelligent image analysis based website functionality."
+        "Contributing in the development of an AI solution using Azure AI Vision and Azure OpenAI Services, adding an intelligent image analysis based website functionality."
       ],
       skills: ["Microsoft Azure", "GitHub Actions", "Computer Vision", "Azure OpenAI Services", "CI/CD"],
     },
@@ -23,9 +33,9 @@ export default function Experience({ id }: { id?: string }) {
       date: "02/2025 to 04/2025",
       description: [
         "Worked on building a personalized copilot for developers at client companies.",
-        "Integrated UI design, software development and AI to create a production level LLM integrated with developer environments.",
+        "Integrated UI design, software development and AI to create a RAG based AI system, integrated with developer environments, capable of understanding and suggesting code snippets based on project context.",
       ],
-      skills: ["UI/UX", "Flask", "AWS", "Kubernetes", "Transformers", "LLM Fine Tuning"],
+      skills: ["UI/UX", "Flask", "AWS", "Retrieval-Augmented Generation"],
     },
     {
       title: "AI Trainer (Freelancer)",

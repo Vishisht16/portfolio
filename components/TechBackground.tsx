@@ -79,10 +79,12 @@ export default function TechBackground() {
       rotationSpeed: number
       glitching: boolean
       glitchTimer: number
+      private canvas: HTMLCanvasElement
 
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+      constructor(canvasEl: HTMLCanvasElement) {
+        this.canvas = canvasEl
+        this.x = Math.random() * this.canvas.width
+        this.y = Math.random() * this.canvas.height
         this.radius = Math.random() * 150 + 100
         this.xSpeed = (Math.random() - 0.5) * 0.3
         this.ySpeed = (Math.random() - 0.5) * 0.3
@@ -121,10 +123,10 @@ export default function TechBackground() {
         }
 
         // Wrap around edges
-        if (this.x < -this.radius) this.x = canvas.width + this.radius
-        if (this.x > canvas.width + this.radius) this.x = -this.radius
-        if (this.y < -this.radius) this.y = canvas.height + this.radius
-        if (this.y > canvas.height + this.radius) this.y = -this.radius
+        if (this.x < -this.radius) this.x = this.canvas.width + this.radius
+        if (this.x > this.canvas.width + this.radius) this.x = -this.radius
+        if (this.y < -this.radius) this.y = this.canvas.height + this.radius
+        if (this.y > this.canvas.height + this.radius) this.y = -this.radius
       }
 
       draw(ctx: CanvasRenderingContext2D) {
@@ -213,7 +215,7 @@ export default function TechBackground() {
     }
 
     // Create fewer blobs
-    const blobs = Array.from({ length: 3 }, () => new Blob())
+    const blobs = Array.from({ length: 3 }, () => new Blob(canvas))
 
     // Create floating binary symbols (not attached to blobs)
     class FloatingSymbol {
@@ -226,9 +228,12 @@ export default function TechBackground() {
       rotation: number
       rotationSpeed: number
 
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+      private canvas: HTMLCanvasElement
+
+      constructor(canvasEl: HTMLCanvasElement) {
+        this.canvas = canvasEl
+        this.x = Math.random() * this.canvas.width
+        this.y = Math.random() * this.canvas.height
         this.symbol = symbols[Math.floor(Math.random() * symbols.length)]
         this.size = Math.random() * 16 + 8
         this.opacity = Math.random() * 0.3 + 0.1
@@ -243,8 +248,8 @@ export default function TechBackground() {
 
         // Reset when out of screen
         if (this.y < -50) {
-          this.y = canvas.height + 50
-          this.x = Math.random() * canvas.width
+          this.y = this.canvas.height + 50
+          this.x = Math.random() * this.canvas.width
           this.symbol = symbols[Math.floor(Math.random() * symbols.length)]
         }
       }
@@ -264,7 +269,7 @@ export default function TechBackground() {
     }
 
     // Create floating symbols
-    const floatingSymbols = Array.from({ length: 50 }, () => new FloatingSymbol())
+    const floatingSymbols = Array.from({ length: 50 }, () => new FloatingSymbol(canvas))
 
     // Animation loop
     let animationFrameId: number

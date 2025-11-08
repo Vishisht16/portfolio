@@ -17,6 +17,13 @@ type Certification = {
 export default function Certifications({ id }: { id?: string }) {
   const certifications: Certification[] = [
     {
+      title: "GitHub Copilot",
+      issuer: "Microsoft",
+      date: "10/2025",
+      skills: ["GitHub Copilot", "Responsible AI"],
+      credentialLink: "https://learn.microsoft.com/api/credentials/share/en-us/VishishtMishra-2884/423D064C33B9640C?sharingId=24E05477EDFE480A"
+    },
+    {
       title: "Oracle AI Vector Search Certified Professional",
       issuer: "Oracle",
       date: "05/2025",
