@@ -4,7 +4,13 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import ThemeToggle from "./ThemeToggle"
 
-const NavItem = ({ href, text, onClick }) => (
+interface NavItemProps {
+  href: string
+  text: string
+  onClick: () => void
+}
+
+const NavItem = ({ href, text, onClick }: NavItemProps) => (
   <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
     <Link
       href={href}
@@ -39,11 +45,12 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
-  const navItems = [
+  const navItems: { href: string; text: string }[] = [
     { href: "#about", text: "About" },
     { href: "#skills", text: "Skills" },
     { href: "#certifications", text: "Certifications" },
     { href: "#experience", text: "Experience" },
+    { href: "#projects", text: "Projects" },
     { href: "#research", text: "Research" },
     { href: "#education", text: "Education" },
     { href: "#contact", text: "Contact" },

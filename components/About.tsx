@@ -52,15 +52,13 @@ export default function About({ id }: { id?: string }) {
             transition={{ duration: 0.5 }}
             className="md:w-2/3 md:pl-8"
           >
-            <p className="text-lg mb-6 dark:text-gray-300 light:text-gray-700 leading-relaxed">
+            <p className="text-lg mb-6 dark:text-gray-300 light:text-gray-700 leading-relaxed text-justify">
               I'm a Computer Science undergraduate, with a great passion for AI. I have proficiency and hands-on
-              experience with PyTorch, TensorFlow and Prompt Engineering techniques. I'm a curious learner and the
-              passion is real. You can always trust me to talk at length over AI and any technical innovations in it.
+              experience with deep learning frameworks and cloud systems. You can always trust me to talk at length over AI and any technical innovations in it.
               <br />
               <br />
-              I'd like to say that learning is my forte and I thrive in more fast-paced environments. I'm also familiar
-              with GCP and its ML services and my long-term goal is to somehow contribute in the field of AI (currently
-              taking up research work for that).
+              Learning is my forte and I thrive in more fast-paced environments. I'm also familiar
+              with web development through Next.js and I'm currently transitioning to DevOps domain while taking up AI related projects.
             </p>
 
             <div className="flex flex-wrap gap-4">

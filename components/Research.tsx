@@ -10,7 +10,7 @@ export default function Research({ id }: { id?: string }) {
       title: "Tribal Languages",
       description: [
         "Taking on an initiative to bring the lesser-known languages of India into mainstream AI, ensuring these languages are preserved and accessible.",
-        "The project involves end-to-end work including data collection, preprocessing, model training with custom algorithms and deployment to create tools for various purposes.",
+        "The research involves end-to-end work including data collection in a highly data scarce environment, preprocessing, model training with custom algorithms and deployment to create tools for various purposes.",
         "Collaborating with linguists, this project aims to integrate the underrespresented languages into AI systems and establish a benchmark for any such future endeavors.",
       ],
       technologies: ["Data Collection", "Data Preprocessing", "Algorithms", "Natural Language Processing", "Linguistics"],
